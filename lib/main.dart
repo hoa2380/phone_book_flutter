@@ -1,13 +1,18 @@
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:phone_book_flutter/src/binding/home_binding.dart';
-import 'package:phone_book_flutter/src/controller/home_controller.dart';
+import 'package:phone_book_flutter/src/data/phone_book.dart';
 import 'package:phone_book_flutter/src/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  final dir = await getApplicationDocumentsDirectory();
+  Hive.init(dir.path);
+  Hive.registerAdapter(PhoneBookAdapter());
+  await Hive.openBox<PhoneBook>('phoneBookData');
   runApp(const MyApp());
-  Get.put<HomeController>(HomeController());
 }
 
 class MyApp extends StatelessWidget {
@@ -20,7 +25,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       initialBinding: HomeBinding(),
-      home: const HomeScreen(),
+      home: HomeScreen(),
     );
   }
 }
