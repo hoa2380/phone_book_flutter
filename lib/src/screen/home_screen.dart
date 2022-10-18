@@ -12,9 +12,7 @@ class HomeScreen extends GetView<HomeController> {
         title: Text('Phone Book'),
         actions: [
           IconButton(
-              onPressed: () {
-                controller.uploadCsv();
-              },
+              onPressed: () {},
               icon: Icon(Icons.import_contacts)
           ),
         ]
