@@ -59,7 +59,7 @@ class HomeScreen extends GetView<HomeController> {
                                 children: [
                                   SlidableAction(
                                     onPressed: (value) {
-                                      controller.delete(index);
+                                      // controller.delete(index);
                                     },
                                     backgroundColor: Color(0xFFFE4A49),
                                     foregroundColor: Colors.white,
@@ -68,7 +68,7 @@ class HomeScreen extends GetView<HomeController> {
                                   ),
                                   SlidableAction(
                                     onPressed: (value) {
-                                      controller.dialogEdit(index);
+                                      // controller.dialogEdit(index);
                                     },
                                     backgroundColor: Color(0xFF21B7CA),
                                     foregroundColor: Colors.white,
