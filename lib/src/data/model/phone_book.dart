@@ -1,12 +1,10 @@
-// import 'dart:convert';
-
-// List<PhoneBook> phoneBookFromJson(String str) => List<PhoneBook>.from(json.decode(str).map((x) => PhoneBook.fromJson(x)));
-//
-// String phoneBookToJson(List<PhoneBook> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
-
+import 'dart:convert';
 import 'package:hive/hive.dart';
 
 part 'phone_book.g.dart';
+List<PhoneBook> phoneBookFromJson(String str) => List<PhoneBook>.from(json.decode(str).map((x) => PhoneBook.fromJson(x)));
+//
+String phoneBookToJson(List<PhoneBook> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 @HiveType(typeId: 0)
 class PhoneBook {
@@ -40,15 +38,15 @@ class PhoneBook {
   });
 
   @HiveField(0)
-  int id;
+  String id;
   @HiveField(1)
-  int idList;
+  String idList;
   @HiveField(2)
-  int idItem;
+  String idItem;
   @HiveField(3)
-  int idCat;
+  String idCat;
   @HiveField(4)
-  int noibat;
+  String noibat;
   @HiveField(5)
   String photo;
   @HiveField(6)
@@ -97,62 +95,62 @@ class PhoneBook {
     return 'PhoneBook{id: $id, idList: $idList, idItem: $idItem, idCat: $idCat, noibat: $noibat, photo: $photo, thumb: $thumb, ten: $ten, title: $title, keywords: $keywords, description: $description, tenkhongdau: $tenkhongdau, gia: $gia, dientich: $dientich, mota: $mota, noidung: $noidung, stt: $stt, hienthi: $hienthi, ngaytao: $ngaytao, ngaysua: $ngaysua, luotxem: $luotxem, mabn: $mabn, diachi: $diachi, dienthoai: $dienthoai, ngaysinh: $ngaysinh, gioitinh: $gioitinh}';
   }
 
-// factory PhoneBook.fromJson(Map<String, dynamic> json) => PhoneBook(
-  //   id: json["id"],
-  //   idList: json["id_list"],
-  //   idItem: json["id_item"],
-  //   idCat: json["id_cat"],
-  //   noibat: json["noibat"],
-  //   photo: json["photo"],
-  //   thumb: json["thumb"],
-  //   ten: json["ten"],
-  //   title: json["title"],
-  //   keywords: json["keywords"],
-  //   description: json["description"],
-  //   tenkhongdau: json["tenkhongdau"],
-  //   gia: json["gia"],
-  //   dientich: json["dientich"],
-  //   mota: json["mota"],
-  //   noidung: json["noidung"],
-  //   stt: json["stt"],
-  //   hienthi: json["hienthi"],
-  //   ngaytao: json["ngaytao"],
-  //   ngaysua: json["ngaysua"],
-  //   luotxem: json["luotxem"],
-  //   mabn: json["mabn"],
-  //   diachi: json["diachi"],
-  //   dienthoai: json["dienthoai"],
-  //   ngaysinh: json["ngaysinh"],
-  //   gioitinh: json["gioitinh"],
-  // );
-  //
-  // Map<String, dynamic> toJson() => {
-  //   "id": id,
-  //   "id_list": idList,
-  //   "id_item": idItem,
-  //   "id_cat": idCat,
-  //   "noibat": noibat,
-  //   "photo": photo,
-  //   "thumb": thumb,
-  //   "ten": ten,
-  //   "title": title,
-  //   "keywords": keywords,
-  //   "description": description,
-  //   "tenkhongdau": tenkhongdau,
-  //   "gia": gia,
-  //   "dientich": dientich,
-  //   "mota": mota,
-  //   "noidung": noidung,
-  //   "stt": stt,
-  //   "hienthi": hienthi,
-  //   "ngaytao": ngaytao,
-  //   "ngaysua": ngaysua,
-  //   "luotxem": luotxem,
-  //   "mabn": mabn,
-  //   "diachi": diachi,
-  //   "dienthoai": dienthoai,
-  //   "ngaysinh": ngaysinh,
-  //   "gioitinh": gioitinh,
-  // };
+factory PhoneBook.fromJson(Map<String, dynamic> json) => PhoneBook(
+    id: json["id"],
+    idList: json["id_list"],
+    idItem: json["id_item"],
+    idCat: json["id_cat"],
+    noibat: json["noibat"],
+    photo: json["photo"],
+    thumb: json["thumb"],
+    ten: json["ten"],
+    title: json["title"],
+    keywords: json["keywords"],
+    description: json["description"],
+    tenkhongdau: json["tenkhongdau"],
+    gia: json["gia"],
+    dientich: json["dientich"],
+    mota: json["mota"],
+    noidung: json["noidung"],
+    stt: json["stt"],
+    hienthi: json["hienthi"],
+    ngaytao: json["ngaytao"],
+    ngaysua: json["ngaysua"],
+    luotxem: json["luotxem"],
+    mabn: json["mabn"],
+    diachi: json["diachi"],
+    dienthoai: json["dienthoai"],
+    ngaysinh: json["ngaysinh"],
+    gioitinh: json["gioitinh"],
+  );
+
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "id_list": idList,
+    "id_item": idItem,
+    "id_cat": idCat,
+    "noibat": noibat,
+    "photo": photo,
+    "thumb": thumb,
+    "ten": ten,
+    "title": title,
+    "keywords": keywords,
+    "description": description,
+    "tenkhongdau": tenkhongdau,
+    "gia": gia,
+    "dientich": dientich,
+    "mota": mota,
+    "noidung": noidung,
+    "stt": stt,
+    "hienthi": hienthi,
+    "ngaytao": ngaytao,
+    "ngaysua": ngaysua,
+    "luotxem": luotxem,
+    "mabn": mabn,
+    "diachi": diachi,
+    "dienthoai": dienthoai,
+    "ngaysinh": ngaysinh,
+    "gioitinh": gioitinh,
+  };
 
 }

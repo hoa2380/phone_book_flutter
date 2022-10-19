@@ -16,9 +16,7 @@ class HomeScreen extends GetView<HomeController> {
         title: Text('Phone Book'),
         actions: [
           IconButton(
-              onPressed: () {
-                controller.dialogAdd();
-              },
+              onPressed: () {},
               icon: Icon(Icons.add_call)
           ),
         ]
@@ -86,7 +84,7 @@ class HomeScreen extends GetView<HomeController> {
                                     Get.to(() => DetailScreen(name: item.ten, phone: item.dienthoai));
                                   },
                                   title: Text(item.ten),
-                                  subtitle: Text(item.dienthoai),
+                                  subtitle: Text(item.id),
                                   leading:  Container(
                                       width: 40,
                                       height: 40,

@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:phone_book_flutter/src/binding/home_binding.dart';
-import 'package:phone_book_flutter/src/data/phone_book.dart';
+import 'package:phone_book_flutter/src/data/model/phone_book.dart';
 import 'package:phone_book_flutter/src/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Phone Book',
       theme: ThemeData(
         primarySwatch: Colors.blue,

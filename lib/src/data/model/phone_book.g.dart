@@ -17,11 +17,11 @@ class PhoneBookAdapter extends TypeAdapter<PhoneBook> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return PhoneBook(
-      id: fields[0] as int,
-      idList: fields[1] as int,
-      idItem: fields[2] as int,
-      idCat: fields[3] as int,
-      noibat: fields[4] as int,
+      id: fields[0] as String,
+      idList: fields[1] as String,
+      idItem: fields[2] as String,
+      idCat: fields[3] as String,
+      noibat: fields[4] as String,
       photo: fields[5] as String,
       thumb: fields[6] as String,
       ten: fields[7] as String,
