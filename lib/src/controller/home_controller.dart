@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:phone_book_flutter/src/data/api/api.dart';
 import 'package:phone_book_flutter/src/data/model/phone_book.dart';
+import 'package:tiengviet/tiengviet.dart';
 
 class HomeController extends GetxController {
   late var data = <PhoneBook>[].obs;
@@ -35,8 +36,12 @@ class HomeController extends GetxController {
   void loadData() async {
     phoneBookBox = Hive.box<PhoneBook>('phoneBookData');
     if (phoneBookBox.isEmpty) {
-      data.value = await Api().getPhoneBook(-1);
+      data.value = await Api().getPhoneBook(- 1);
       phoneBookBox.addAll(data);
+      for(var i = 0; i  <= 15; i++) {
+        data.value = await Api().getPhoneBook(data[data.length - 1].id);
+        phoneBookBox.addAll(data);
+      }
     } else {
       data.value = await Api().getPhoneBook(phoneBookBox.values.toList()[phoneBookBox.length - 1].id);
       if(data.isNotEmpty) {
@@ -44,6 +49,7 @@ class HomeController extends GetxController {
       }
     }
     phoneBookData.value = phoneBookBox.values.toList();
+    print(phoneBookBox.length);
     isLoading.value = true;
   }
 
@@ -88,7 +94,7 @@ class HomeController extends GetxController {
 
   Future<void> search(value) async {
     phoneBookBox = Hive.box<PhoneBook>('phoneBookData');
-    phoneBookData.value = phoneBookBox.values.where((e) => e.ten.toLowerCase().contains(value.toString().toLowerCase())).toList();
+    phoneBookData.value = phoneBookBox.values.where((e) => TiengViet.parse(e.ten.toLowerCase()).contains(TiengViet.parse(value.toString().toLowerCase()))).toList();
   }
 
   dialogEdit(index) {
