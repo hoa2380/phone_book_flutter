@@ -265,7 +265,7 @@ class HomeController extends GetxController {
                                 noibat: 1,
                                 photo: " ",
                                 thumb: " ",
-                                ten: ten,
+                                ten: tenCrtl.text,
                                 title: " ",
                                 keywords: " ",
                                 description: " ",
@@ -274,15 +274,15 @@ class HomeController extends GetxController {
                                 dientich: " ",
                                 mota: " ",
                                 noidung: " ",
-                                stt: stt,
+                                stt: int.parse(sttCrtl.text),
                                 hienthi: 1,
                                 ngaytao: ngaytao,
                                 ngaysua: DateTime.now().millisecondsSinceEpoch,
                                 luotxem: 0,
-                                mabn: mabn,
+                                mabn: mabnCrtl.text,
                                 diachi: " ",
-                                dienthoai: dienthoai,
-                                ngaysinh: ngays,
+                                dienthoai: dienthoaiCrtl.text,
+                                ngaysinh: ngaysinh.value,
                                 gioitinh: gioit));
                         phoneBookData.value = phoneBookBox.values.toList();
                         print(phoneBookBox.values.toList()[0]);
