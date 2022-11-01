@@ -3,10 +3,10 @@ import 'dart:math' as math;
 
 class DetailScreen extends StatefulWidget {
   final String name;
-  final String phone;
+  final String mabn;
 
 
-  DetailScreen({required this.name, required this.phone});
+  DetailScreen({required this.name, required this.mabn});
 
   @override
   State<DetailScreen> createState() => _DetailScreenState();
@@ -50,8 +50,18 @@ class _DetailScreenState extends State<DetailScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Name: ${widget.name}', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
-                  Text('Phone: ${widget.phone}', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),)
+                  Row(
+                    children: [
+                      Text('Tên Bệnh Nhân: ', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                      Text(widget.name, style: TextStyle(fontSize: 20) )
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text('Mã Bệnh Nhân: ', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                      Text(widget.mabn, style: TextStyle(fontSize: 20))
+                    ],
+                  )
                 ],
               )
 

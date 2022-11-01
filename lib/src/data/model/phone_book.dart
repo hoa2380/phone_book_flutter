@@ -38,15 +38,15 @@ class PhoneBook {
   });
 
   @HiveField(0)
-  String id;
+  int id;
   @HiveField(1)
-  String idList;
+  int idList;
   @HiveField(2)
-  String idItem;
+  int idItem;
   @HiveField(3)
-  String idCat;
+  int idCat;
   @HiveField(4)
-  String noibat;
+  int noibat;
   @HiveField(5)
   String photo;
   @HiveField(6)
@@ -62,7 +62,7 @@ class PhoneBook {
   @HiveField(11)
   String tenkhongdau;
   @HiveField(12)
-  String gia;
+  int gia;
   @HiveField(13)
   String dientich;
   @HiveField(14)
@@ -70,15 +70,15 @@ class PhoneBook {
   @HiveField(15)
   String noidung;
   @HiveField(16)
-  String stt;
+  int stt;
   @HiveField(17)
-  String hienthi;
+  int hienthi;
   @HiveField(19)
-  String ngaytao;
+  int ngaytao;
   @HiveField(20)
-  String ngaysua;
+  int ngaysua;
   @HiveField(21)
-  String luotxem;
+  int luotxem;
   @HiveField(22)
   String mabn;
   @HiveField(23)
@@ -88,7 +88,7 @@ class PhoneBook {
   @HiveField(25)
   String ngaysinh;
   @HiveField(26)
-  String gioitinh;
+  int gioitinh;
 
   @override
   String toString() {

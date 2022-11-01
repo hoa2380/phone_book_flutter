@@ -12,11 +12,14 @@ class HomeScreen extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+        resizeToAvoidBottomInset: false,
+        appBar: AppBar(
         title: Text('Phone Book'),
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                controller.dialogAdd();
+              },
               icon: Icon(Icons.add_call)
           ),
         ]
@@ -33,7 +36,7 @@ class HomeScreen extends GetView<HomeController> {
                     controller.search(value);
                   },
                   decoration: InputDecoration(
-                      labelText: 'Search',
+                      labelText: 'Tìm Kiếm',
                       border: OutlineInputBorder(
                           borderSide: BorderSide(
                               color: Theme.of(context).primaryColor
@@ -68,7 +71,7 @@ class HomeScreen extends GetView<HomeController> {
                                   ),
                                   SlidableAction(
                                     onPressed: (value) {
-                                      // controller.dialogEdit(index);
+                                      controller.dialogEdit(index, item.id, item.ten, item.dienthoai, item.stt, item.mabn, item.ngaysinh, item.gioitinh, item.ngaytao);
                                     },
                                     backgroundColor: Color(0xFF21B7CA),
                                     foregroundColor: Colors.white,
@@ -81,10 +84,10 @@ class HomeScreen extends GetView<HomeController> {
                                 padding: const EdgeInsets.symmetric(vertical: 10),
                                 child: ListTile(
                                   onTap: () {
-                                    Get.to(() => DetailScreen(name: item.ten, phone: item.dienthoai));
+                                    Get.to(() => DetailScreen(name: item.ten, mabn: item.mabn));
                                   },
                                   title: Text(item.ten),
-                                  subtitle: Text(item.id),
+                                  subtitle: Text(item.mabn),
                                   leading:  Container(
                                       width: 40,
                                       height: 40,
